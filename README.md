@@ -1,4 +1,4 @@
-# Semana_da_computação_2023.1
+# Crud de cadastro de clientes usando aws
 
 AWS micro serviço
 
