@@ -52,7 +52,7 @@ AWS micro serviço
 
 4. Tipo de terminal = Regional
 
-5. Criar metodo = GET
+5. Criar método = GET
 
 6. Tipo de integração = Lambda Function
 
@@ -66,15 +66,15 @@ AWS micro serviço
 
 ### Exemplo de uso da API
 
-1. Get
+1. ### Get
 
-- url = https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev>?
 
 - Retorno = dados do usuário
 
-2. Post
+2. ### Post
 
-- url = https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev>?
 
 - Body =
 
@@ -89,9 +89,9 @@ AWS micro serviço
 
 - Retorno = User added!
 
-3. Put
+3. ### Put
 
-- url = https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?userName={userName}
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF>}
 
 - body =
 
@@ -105,8 +105,14 @@ AWS micro serviço
 
 - Retorno = User updated!
 
-4. Delete
+4. ### Delete
 
-- url = https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?userName={userName}
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF>}
 
 - Retorno = User deleted!
+
+**OBS: Para testar os metodos post, put e delete, é necessário passar um token válido no header da requisição.**
+
+- x-api-key = **\*\***\*\*\***\*\*** (token válido)
+
+- Entre em contato comigo no WhatsApp para obter o token válido = [WhatsApp](https://api.whatsapp.com/send?phone=5581996479569&text=Oi%2C%20me%20chamo%20...)

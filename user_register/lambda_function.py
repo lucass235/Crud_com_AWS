@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         elif event['httpMethod'] == 'PUT':
 
             # Extrai o valor do parâmetro 'userName'
-            id_user = event['queryStringParameters']['userName']
+            id_user = event['queryStringParameters']['id']
 
             data = json.loads(event['body'])
 
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
 
         elif event['httpMethod'] == 'DELETE':
 
-            id_user = event['queryStringParameters']['userName']
+            id_user = event['queryStringParameters']['id']
 
             result = dynamo.delete_user(id_user)
 
