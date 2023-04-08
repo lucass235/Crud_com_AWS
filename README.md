@@ -30,3 +30,7 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 - [AWS DynamoDB](https://aws.amazon.com/pt/dynamodb/)
 - [AWS API Gateway](https://aws.amazon.com/pt/api-gateway/)
 - [Python](https://www.python.org/)
+
+## Diagrama
+
+![Diagrama](./diagrama_aws.png)
