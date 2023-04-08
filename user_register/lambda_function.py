@@ -30,6 +30,9 @@ def lambda_handler(event, context):
             # Extrai o valor do parâmetro 'userName'
             id_user = event['queryStringParameters']['id']
 
+            if not validate.validate_cpf(id_user):
+                raise custom_err.BadRequestErr(f'CPF {id_user} invalid!')
+
             data = json.loads(event['body'])
 
             result = dynamo.update_item(id_user, data)
@@ -43,6 +46,9 @@ def lambda_handler(event, context):
 
             id_user = event['queryStringParameters']['id']
 
+            if not validate.validate_cpf(id_user):
+                raise custom_err.BadRequestErr(f'CPF {id_user} invalid!')
+
             result = dynamo.delete_user(id_user)
 
             return {
@@ -50,7 +56,7 @@ def lambda_handler(event, context):
                 'body': json.dumps(result)
             }
 
-        # Caso de a solicitação ser
+        # Caso de a solicitação ser GET
         items = dynamo.get_data()
 
         return {
@@ -73,6 +79,12 @@ def lambda_handler(event, context):
     except custom_err.NotFoundErr as err:
         return {
             'statusCode': 404,
+            'body': json.dumps(f'{err}')
+        }
+
+    except custom_err.BadRequestErr as err:
+        return {
+            'statusCode': 400,
             'body': json.dumps(f'{err}')
         }
 

@@ -32,7 +32,7 @@ def post_item(payload):
     response = table.get_item(Key={'id': payload['id']})
     
     if 'Item' in response:
-        raise err.ConflictErr(f"ID {payload['id']} is already registered!")
+        raise err.ConflictErr(f"CPF {payload['id']} is already registered!")
         
     # Define os valores do item que será inserido
     item = {
@@ -54,8 +54,7 @@ def update_item(id_user, data):
     
     if 'Item' not in response:
         # O item existe na tabela
-        raise err.NotFoundErr(f"ID {id_user} is not registered!")
-    
+        raise err.NotFoundErr(f"CPF {id_user} is not registered!")
     
     # Informe os novos valores para atualizar
     expression_attribute_values = {':age': data['age'], ':email': data['email'], ':userName': data['userName']}
@@ -79,7 +78,7 @@ def delete_user(id_user):
     
     if 'Item' not in response:
         # O item existe na tabela
-        raise err.NotFoundErr(f"ID {id_user} is not registered!")
+        raise err.NotFoundErr(f"CPF {id_user} is not registered!")
     
     table.delete_item(
         Key={
