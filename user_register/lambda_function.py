@@ -1,6 +1,9 @@
 import json
 import boto3
+from json import dumps
 import dynamo.dynamoDB as dynamo
+import validation.validate_data as validate
+import err.custom_err as custom_err
 
 
 def lambda_handler(event, context):
@@ -12,6 +15,8 @@ def lambda_handler(event, context):
 
             # Decodifica o corpo da solicitação HTTP em um objeto Python
             payload = json.loads(event['body'])
+
+            validate.validate_data(payload)
 
             result = dynamo.post_item(payload)
 
@@ -53,8 +58,26 @@ def lambda_handler(event, context):
             'body': json.dumps(items)
         }
 
-    except Exception as e:
+    except custom_err.RequiredErr as err:
+        return {
+            'statusCode': 407,
+            'body': dumps(F'{err}')
+        }
+
+    except custom_err.ConflictErr as err:
+        return {
+            'statusCode': 409,
+            'body': json.dumps(f'{err}')
+        }
+
+    except custom_err.NotFoundErr as err:
+        return {
+            'statusCode': 404,
+            'body': json.dumps(f'{err}')
+        }
+
+    except Exception as err:
         return {
             'statusCode': 505,
-            'body': json.dumps(f'{e}')
+            'body': json.dumps(f'{err}')
         }
