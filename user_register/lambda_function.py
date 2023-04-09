@@ -4,6 +4,7 @@ from json import dumps
 import dynamo.dynamoDB as dynamo
 import validation.validate_data as validate
 import err.custom_err as custom_err
+import data_preparation.format_data as format
 
 
 def lambda_handler(event, context):
@@ -57,11 +58,11 @@ def lambda_handler(event, context):
             }
 
         # Caso de a solicitação ser GET
-        items = dynamo.get_data()
+        data_format = format.data_formated(dynamo.get_data())
 
         return {
             'statusCode': 200,
-            'body': json.dumps(items)
+            'body': json.dumps(data_format)
         }
 
     except custom_err.RequiredErr as err:
