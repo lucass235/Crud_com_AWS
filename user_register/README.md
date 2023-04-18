@@ -68,13 +68,13 @@ AWS micro serviço
 
 1. ### Get
 
-- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev>?
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?>
 
 - Retorno = dados do usuário
 
 2. ### Post
 
-- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev>?
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?>
 
 - Body =
 
@@ -91,7 +91,7 @@ AWS micro serviço
 
 3. ### Put
 
-- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF>}
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF}>
 
 - body =
 
@@ -107,7 +107,7 @@ AWS micro serviço
 
 4. ### Delete
 
-- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF>}
+- url = <https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?id={CPF}>
 
 - Retorno = User deleted!
 
