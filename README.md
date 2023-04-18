@@ -33,4 +33,4 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 
 ## Diagrama
 
-![Diagrama](./diagrama_aws.png)
+![Diagrama](./diagrama/diagrama_aws.png)
