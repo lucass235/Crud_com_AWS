@@ -7,7 +7,6 @@ load_dotenv()
 
 import os
 
-
 class TestGetApi(unittest.TestCase):
 
     def setUp(self):
