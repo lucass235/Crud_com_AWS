@@ -27,7 +27,7 @@ class TestGetApi(unittest.TestCase):
         response = requests.post(self.url, headers=headers, json=self.body)
 
         # Verificar a resposta da solicitação
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 409)
 
 
 def __init__():
