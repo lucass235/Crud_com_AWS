@@ -22,7 +22,13 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 
 9. E o Lambda para criar as funções que serão executadas quando a API for chamada.
 
-- Mais detalhes sobre o projeto, acesse o arquivo [README.md](./user_register/README.md) dentro da pasta user_register.
+10. Foi implementados testes unitários para validar as requisições e respostas da API.
+
+11. Testes unitários utilizando o pytest.
+
+12. Foi feito a integração contínua utilizando o Github Actions onde é executado os testes unitários implementados.
+
+- Mais detalhes sobre a implementação do projeto, acesse o arquivo [README.md](./user_register/README.md).
 
 ## Tecnologias utilizadas
 
@@ -30,6 +36,8 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 - [AWS DynamoDB](https://aws.amazon.com/pt/dynamodb/)
 - [AWS API Gateway](https://aws.amazon.com/pt/api-gateway/)
 - [Python](https://www.python.org/)
+- [Pytest](https://docs.pytest.org/en/stable/)
+- [Github Actions](https://github.com/features/actions)
 
 ## Diagrama
 
