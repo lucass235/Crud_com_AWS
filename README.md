@@ -38,7 +38,8 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 - [Python](https://www.python.org/)
 - [Pytest](https://docs.pytest.org/en/stable/)
 - [Github Actions](https://github.com/features/actions)
+- [Unittest](https://docs.python.org/3/library/unittest.html)
 
 ## Diagrama
 
-![Diagrama](./diagrama/diagrama_aws.png)
+![Diagrama](./diagrama/Diagrama_crud_aws.png)
