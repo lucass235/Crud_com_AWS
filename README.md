@@ -46,8 +46,6 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 
 ## Video de demonstração
 
-<video width="1120" height="720" controls>
+https://github.com/lucass235/Crud_com_AWS/assets/64389529/599806ae-2071-4fc3-b9ae-319e4514c20c
 
-  <source src="./video/Exemplo_de_uso.mp4" type="video/mp4">
 
-</video>
