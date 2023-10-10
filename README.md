@@ -42,7 +42,7 @@ Este projeto tem como objetivo criar uma API REST para cadastro de clientes util
 
 ## Diagrama
 
-![Diagrama](./diagrama/Diagrama_crud_aws.png)
+![Diagrama](./backend/diagrama/Diagrama_crud_aws.png)
 
 ## Video de demonstração
 
