@@ -1,11 +1,38 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { User } from "@/types/User";
+import CardMaterial from "@/components/material/CardMaterial";
+import { useState, useEffect } from "react";
+import { Grid } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [dataUsers, setDataUsers] = useState<User[]>([
+    {
+      id: "1",
+      name: "teste",
+      email: "teste",
+      age: 1,
+    },
+  ]);
+
+  // pegar valores de uma api
+  useEffect(() => {
+    fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?")
+      .then((res) => {
+        if (res.ok) {
+          console.log(res);
+          return res.json();
+        }
+        throw new Error("Falha na requisição");
+      })
+      .then((data: User[]) => {
+        setDataUsers(data);
+      })
+      .catch((err) => console.log("Error: ", err));
+  });
   return (
     <>
       <Head>
@@ -17,8 +44,20 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <div>
           <p>Cliente</p>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            {dataUsers.map((user) => (
+              <CardMaterial key={user.id} {...user} />
+            ))}
+          </Grid>
         </div>
       </main>
     </>
   );
+}
+function userEffect(arg0: () => void) {
+  throw new Error("Function not implemented.");
 }
