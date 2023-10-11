@@ -12,7 +12,7 @@ export default function Home() {
   const [dataUsers, setDataUsers] = useState<User[]>([
     {
       id: "1",
-      name: "teste",
+      userName: "teste",
       email: "teste",
       age: 1,
     },
@@ -28,7 +28,7 @@ export default function Home() {
         }
         throw new Error("Falha na requisição");
       })
-      .then((data: User[]) => {
+      .then((data: any) => {
         setDataUsers(data);
       })
       .catch((err) => console.log("Error: ", err));

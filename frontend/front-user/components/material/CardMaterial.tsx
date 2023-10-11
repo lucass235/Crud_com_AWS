@@ -18,7 +18,7 @@ export default function CardMaterial(props: User) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.name}
+            {props.userName}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
             {props.email}
