@@ -20,7 +20,12 @@ export default function Home() {
 
   // pegar valores de uma api
   useEffect(() => {
-    fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev?")
+    fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev", {
+      method: "GET",
+      headers: {
+        Origin: "http://localhost:3000",
+      },
+    })
       .then((res) => {
         if (res.ok) {
           console.log(res);
@@ -32,7 +37,7 @@ export default function Home() {
         setDataUsers(data);
       })
       .catch((err) => console.log("Error: ", err));
-  });
+  }, []);
   return (
     <>
       <Head>
