@@ -22,6 +22,7 @@ export default function Home() {
   useEffect(() => {
     fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev", {
       method: "GET",
+      mode: "no-cors",
       headers: {
         Origin: "http://localhost:3000",
       },
