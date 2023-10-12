@@ -5,10 +5,12 @@ import { User } from "@/types/User";
 import CardMaterial from "@/components/material/CardMaterial";
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
+import LinearLoader from "@/components/material/LinearLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [loanding, setLoanding] = useState<boolean>(true);
   const [dataUsers, setDataUsers] = useState<User[]>([
     {
       id: "1",
@@ -20,6 +22,7 @@ export default function Home() {
 
   // pegar valores de uma api
   useEffect(() => {
+    setLoanding(true);
     fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev", {
       method: "GET",
       mode: "no-cors",
@@ -28,17 +31,16 @@ export default function Home() {
       },
     })
       .then((res) => {
-        if (res.ok) {
-          console.log(res);
-          return res.json();
-        }
-        throw new Error("Falha na requisição");
+        console.log("res: ", res);
       })
       .then((data: any) => {
         setDataUsers(data);
+        setLoanding(false);
       })
       .catch((err) => console.log("Error: ", err));
   }, []);
+
+  if (loanding) return <LinearLoader />;
   return (
     <>
       <Head>
