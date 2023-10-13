@@ -14,16 +14,17 @@ export default function Home() {
   const [dataUsers, setDataUsers] = useState<User[]>([
     {
       id: "1",
-      userName: "teste",
-      email: "teste",
-      age: "1",
+      userName: "Lucas dos Santos",
+      email: "lucass235@gmail.com",
+      age: "23",
+      image: "./lucas.jpg",
     },
   ]);
 
   // pegar valores de uma api
   useEffect(() => {
     setLoanding(true);
-    fetch("https://tolvk25ntd.execute-api.us-east-1.amazonaws.com/dev", {
+    fetch("https://tbt42xt9h4.execute-api.us-east-1.amazonaws.com/dev_test", {
       method: "GET",
       mode: "no-cors",
     })

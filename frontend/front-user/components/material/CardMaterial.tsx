@@ -3,8 +3,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActionArea, CardActions, Modal } from "@mui/material";
 import { User } from "@/types/User";
+import ModalMaterial from "./ModalMaterial";
 
 export default function CardMaterial(props: User) {
   return (
@@ -12,8 +13,8 @@ export default function CardMaterial(props: User) {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="200"
-          image="https://cdn-icons-png.flaticon.com/512/666/666201.png"
+          height="350"
+          image={props.image}
           alt="green iguana"
         />
         <CardContent>
@@ -29,16 +30,7 @@ export default function CardMaterial(props: User) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button
-          onClick={() => {
-            alert("Implementar edit");
-          }}
-          size="small"
-          color="primary"
-          variant="contained"
-        >
-          Editar
-        </Button>
+        <ModalMaterial {...props} />
       </CardActions>
     </Card>
   );
