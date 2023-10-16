@@ -7,6 +7,11 @@ import { Button, CardActionArea, CardActions, Modal } from "@mui/material";
 import { User } from "@/types/User";
 import ModalMaterial from "./ModalMaterial";
 
+interface Props {
+  user: User;
+  dataForm: (data: any) => void;
+}
+
 export default function CardMaterial(props: User) {
   return (
     <Card sx={{ maxWidth: 400 }}>

@@ -19,6 +19,13 @@ export default function Home() {
       age: "23",
       image: "./lucas.jpg",
     },
+    {
+      id: "2",
+      userName: "Davi dos Santos",
+      email: "davipro@gmail.com",
+      age: "14",
+      image: "./davi.png",
+    },
   ]);
 
   // pegar valores de uma api
@@ -65,7 +72,9 @@ export default function Home() {
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
             {dataUsers.map((user) => (
-              <CardMaterial key={user.id} {...user} />
+              <Grid item key={user.id} md={6}>
+                <CardMaterial {...user} />
+              </Grid>
             ))}
           </Grid>
         </div>

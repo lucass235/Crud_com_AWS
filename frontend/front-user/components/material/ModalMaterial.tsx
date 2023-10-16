@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { User } from "@/types/User";
 import { Grid, TextField } from "@mui/material";
-// import { FormControl } from "@mui/material";
+import ReactHookForm from "../ReactHookForm";
 
 const style = {
   position: "absolute" as "absolute",
@@ -13,7 +13,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 500,
-  height: 500,
+  height: 550,
   bgcolor: "background.paper",
   border: "2px solid #663333",
   boxShadow: 24,
@@ -25,9 +25,10 @@ export default function ModalMaterial(props: User) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [userName, setUserName] = React.useState(props.userName);
-  const [age, setAge] = React.useState(props.age);
-  const [email, setEmail] = React.useState(props.email);
+
+  const dataForm = (data: any) => {
+    console.log("data Modal: ", data);
+  };
 
   return (
     <div>
@@ -47,8 +48,7 @@ export default function ModalMaterial(props: User) {
             spacing={1}
             columns={1}
           >
-            {/* <FormControl required> */}
-            <img
+            {/* <img
               style={{ width: "100px", marginBottom: "20px" }}
               src={props.image}
               alt="avatar"
@@ -79,8 +79,12 @@ export default function ModalMaterial(props: User) {
             />
             <Button variant="contained" onClick={handleClose}>
               Salvar
-            </Button>
-            {/* </FormControl> */}
+            </Button> */}
+            <ReactHookForm
+              user={props}
+              handleClose={handleClose}
+              dataForm={dataForm}
+            />
           </Grid>
         </Box>
       </Modal>
