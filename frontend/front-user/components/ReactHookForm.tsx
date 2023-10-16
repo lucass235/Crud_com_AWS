@@ -91,7 +91,7 @@ const ReactHookForm = ({ user, handleClose, dataForm }: Props) => {
         <Button
           onClick={() => {
             handleSubmit(onSubmit)();
-            handleClose;
+            handleClose();
           }}
           disabled={Object.values(errors).length > 0}
         >

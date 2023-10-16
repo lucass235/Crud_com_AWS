@@ -6,6 +6,7 @@ import CardMaterial from "@/components/material/CardMaterial";
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import LinearLoader from "@/components/material/LinearLoader";
+import { getUser } from "@/fetch/user";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,18 +32,13 @@ export default function Home() {
   // pegar valores de uma api
   useEffect(() => {
     setLoanding(true);
-    fetch("https://tbt42xt9h4.execute-api.us-east-1.amazonaws.com/dev_test", {
-      method: "GET",
-      mode: "no-cors",
-    })
-      .then((data: any) => {
-        console.log("data: ", data);
-        if (data.body) {
-          setDataUsers(data);
-        }
-        setLoanding(false);
-      })
-      .catch((err) => console.log("Error: ", err));
+
+    const dataUser: any = getUser();
+    // if (dataUser) {
+    //   setDataUsers(dataUser);
+    // }
+    console.log("dataUser: ", dataUser);
+    setLoanding(false);
   }, []);
 
   if (loanding) return <LinearLoader />;
