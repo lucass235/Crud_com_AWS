@@ -5,10 +5,9 @@ export async function getUser() {
     // mode: "no-cors",
   })
     .then((res) => res.json())
-    .then((data) => {
-      console.log("data: ", data.data);
-
-      return data.data;
+    .then((user) => {
+      console.log("res: ", user.data);
+      return user.data;
     })
     .catch((err) => console.log("Error: ", err));
 }

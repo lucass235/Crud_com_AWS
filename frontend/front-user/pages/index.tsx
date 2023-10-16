@@ -33,11 +33,14 @@ export default function Home() {
   useEffect(() => {
     setLoanding(true);
 
-    const dataUser: any = getUser();
-    // if (dataUser) {
-    //   setDataUsers(dataUser);
-    // }
-    console.log("dataUser: ", dataUser);
+    // const dataUser: any = getUser();
+    // getUser().then((data) => {
+    //   console.log("data: ", data);
+    // });
+    getUser().then((data) => {
+      console.log("UserData: ", data);
+    });
+
     setLoanding(false);
   }, []);
 
