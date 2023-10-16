@@ -19,18 +19,18 @@ export default function CardMaterial(props: User) {
         <CardMedia
           component="img"
           height="350"
-          image={props.image}
+          image={props.attributes.image}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.userName}
+            {props.attributes.userName}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {props.email}
+            {props.attributes.email}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {props.age}
+            {props.attributes.age}
           </Typography>
         </CardContent>
       </CardActionArea>

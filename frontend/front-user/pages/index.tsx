@@ -11,8 +11,8 @@ import { getUser } from "@/fetch/user";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [loanding, setLoanding] = useState<boolean>(true);
-  const [dataUsers, setDataUsers] = useState<User[]>([
+  const [loanding, setLoading] = useState<boolean>(true);
+  const [dataUsers, setDataUsers] = useState<any>([
     {
       id: "1",
       userName: "Lucas dos Santos",
@@ -31,19 +31,22 @@ export default function Home() {
 
   // pegar valores de uma api
   useEffect(() => {
-    setLoanding(true);
+    setLoading(true);
 
-    // const dataUser: any = getUser();
-    // getUser().then((data) => {
-    //   console.log("data: ", data);
-    // });
-    getUser().then((data) => {
-      console.log("UserData: ", data);
-    });
+    async function fetchData() {
+      try {
+        const users: any = await getUser();
+        setDataUsers(users);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-    setLoanding(false);
+    fetchData();
   }, []);
-
+console.log(dataUsers)
   if (loanding) return <LinearLoader />;
   return (
     <>
@@ -70,8 +73,8 @@ export default function Home() {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {dataUsers.map((user) => (
-              <Grid item key={user.id} md={6}>
+            {dataUsers.map((user: User) => (
+              <Grid item key={user.attributes.id} md={6}>
                 <CardMaterial {...user} />
               </Grid>
             ))}
