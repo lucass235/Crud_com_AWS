@@ -4,13 +4,15 @@ import styles from "@/styles/Home.module.css";
 import { User } from "@/types/User";
 import CardMaterial from "@/components/material/CardMaterial";
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import LinearLoader from "@/components/material/LinearLoader";
 import { getUser } from "@/fetch/user";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
   const [loanding, setLoading] = useState<boolean>(true);
   const [dataUsers, setDataUsers] = useState<any>([
     {
@@ -28,7 +30,7 @@ export default function Home() {
       image: "./davi.png",
     },
   ]);
-
+  const [pdfShow, setPdfShow] = useState<boolean>(false);
   // pegar valores de uma api
   useEffect(() => {
     setLoading(true);
@@ -46,8 +48,9 @@ export default function Home() {
 
     fetchData();
   }, []);
-console.log(dataUsers)
+  console.log(dataUsers);
   if (loanding) return <LinearLoader />;
+
   return (
     <>
       <Head>
@@ -79,6 +82,17 @@ console.log(dataUsers)
               </Grid>
             ))}
           </Grid>
+          <Button
+            variant="contained"
+            onClick={() => {
+              setPdfShow(!pdfShow);
+              router.push(
+                `/PdfPage?userName=${dataUsers[0].attributes.userName}&email=${dataUsers[0].attributes.email}&age=${dataUsers[0].attributes.age}`
+              );
+            }}
+          >
+            {pdfShow ? "Fechar PDF" : "Abrir PDF"}
+          </Button>
         </div>
       </main>
     </>
