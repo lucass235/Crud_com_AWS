@@ -15,6 +15,7 @@
     "@mui/material": "^5.14.12",
     "@mui/styled-engine-sc": "^5.14.12",
     "@react-pdf/renderer": "^3.1.13",
+    "axios": "^1.6.7",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",

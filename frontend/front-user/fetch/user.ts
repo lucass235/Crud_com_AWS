@@ -1,6 +1,6 @@
 import { User } from "../types/User";
 export async function getUser() {
-  return fetch("http://localhost:1337/api/clients", {
+  return fetch("http://localhost:3000/api/clients", {
     method: "GET",
   })
     .then((res) => res.json())

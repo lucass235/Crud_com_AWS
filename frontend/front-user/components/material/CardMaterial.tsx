@@ -6,36 +6,37 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Modal } from "@mui/material";
 import { User } from "@/types/User";
 import ModalMaterial from "./ModalMaterial";
+import Client from "@/model/Client";
 
 interface Props {
-  user: User;
-  dataForm: (data: any) => void;
+  client: Client;
+  dataForm?: (data: any) => void;
 }
 
-export default function CardMaterial(props: User) {
+export default function CardMaterial(props: Props) {
   return (
     <Card sx={{ maxWidth: 400 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="350"
-          image={props.attributes.image}
+          image={props.client.image}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.attributes.userName}
+            {props.client.userName}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {props.attributes.email}
+            {props.client.email}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {props.attributes.age}
+            {props.client.age}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <ModalMaterial {...props} />
+        <ModalMaterial {...props.client} />
       </CardActions>
     </Card>
   );

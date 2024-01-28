@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import { User } from "@/types/User";
 import { Grid, TextField } from "@mui/material";
 import ReactHookForm from "../ReactHookForm";
+import Client from "@/model/Client";
 
 const style = {
   position: "absolute" as "absolute",
@@ -21,7 +22,7 @@ const style = {
   color: "black",
 };
 
-export default function ModalMaterial(props: User) {
+export default function ModalMaterial(props: Client) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

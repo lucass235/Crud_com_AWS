@@ -4,9 +4,10 @@ import Image from "next/image";
 import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import global from "../styles/Home.module.css";
+import Client from "@/model/Client";
 
 interface Props {
-  user: User;
+  user: Client;
   handleClose: () => void;
   dataForm: any;
 }
