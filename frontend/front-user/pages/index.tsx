@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { Button, Grid } from "@mui/material";
 import LinearLoader from "@/components/material/LinearLoader";
 import { useRouter } from "next/router";
-import axios from "axios";
 import Client from "@/model/Client";
 import { getApiUrl } from "@/services/requests";
 

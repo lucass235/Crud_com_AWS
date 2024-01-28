@@ -1,9 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { User } from "@/types/User";
 import { Grid, TextField } from "@mui/material";
 import ReactHookForm from "../ReactHookForm";
 import Client from "@/model/Client";

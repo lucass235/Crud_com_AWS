@@ -3,8 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Modal } from "@mui/material";
-import { User } from "@/types/User";
+import { CardActionArea, CardActions, Modal } from "@mui/material";
 import ModalMaterial from "./ModalMaterial";
 import Client from "@/model/Client";
 

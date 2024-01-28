@@ -1,6 +1,4 @@
-import { User } from "@/types/User";
 import { Box, Button, TextField } from "@mui/material";
-import Image from "next/image";
 import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import global from "../styles/Home.module.css";
