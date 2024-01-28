@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { User } from "@/types/User";
 import CardMaterial from "@/components/material/CardMaterial";
 import { useState, useEffect } from "react";
 import { Button, Grid } from "@mui/material";
