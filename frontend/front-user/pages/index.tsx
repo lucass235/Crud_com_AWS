@@ -9,6 +9,7 @@ import LinearLoader from "@/components/material/LinearLoader";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Client from "@/model/Client";
+import { getApiUrl } from "@/services/requests";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,19 +19,6 @@ export default function Home() {
   const [dataUsers, setDataUsers] = useState<Client[]>([]);
     const [pdfShow, setPdfShow] = useState<boolean>(false);
     
-    async function getApiUrl() {
-        try {
-            const response = await axios.get("http://localhost:3000/api/clients");
-            console.log(response);
-            
-            return response.data; 
-        } catch (error) {
-            console.error("Erro ao obter vídeos:", error);
-            throw error; 
-        }
-    }
-
-
   // pegar valores de uma api
     useEffect(() => {
         setLoading(true);
